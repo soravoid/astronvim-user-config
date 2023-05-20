@@ -81,5 +81,30 @@ return {
     --     ["~/%.config/foo/.*"] = "fooscript",
     --   },
     -- }
+
+    vim.wo.relativenumber = false
+    vim.api.nvim_set_option("clipboard", "unnamed")
+    vim.opt.colorcolumn = "79"
+
+    if vim.g.neovide then
+        -- Copy-Paste Keymaps
+      vim.keymap.set('v', '<C-A-c>', '"+y') -- Copy
+      vim.keymap.set('n', '<C-A-v>', '"+P') -- Paste normal mode
+      vim.keymap.set('v', '<C-A-v>', '"+P') -- Paste visual mode
+      vim.keymap.set('c', '<C-A-v>', '<C-R>+') -- Paste command mode
+      vim.keymap.set('i', '<C-A-v>', '<ESC>l"+Pli') -- Paste insert mode
+    end
+
+    -- Allow clipboard copy paste in neovim
+    vim.api.nvim_set_keymap('', '<C-A-v>', '+p<CR>', { noremap = true, silent = true})
+    vim.api.nvim_set_keymap('!', '<C-A-v>', '<C-R>+', { noremap = true, silent = true})
+    vim.api.nvim_set_keymap('t', '<C-A-v>', '<C-R>+', { noremap = true, silent = true})
+    vim.api.nvim_set_keymap('v', '<C-A-v>', '<C-R>+', { noremap = true, silent = true})
+
+    -- VimTeX things
+    vim.g.tex_flavor = 'latex'
+    vim.g.vimtex_view_method = 'zathura'
+
+    vim.api.nvim_set_hl(0, "CmpItemKindCopilot", {fg ="#6CC644"})
   end,
 }
