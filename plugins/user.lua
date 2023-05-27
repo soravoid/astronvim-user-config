@@ -11,7 +11,7 @@ return {
   -- },
   {
     "lambdalisue/suda.vim",
-    lazy = false,
+    event = "InsertEnter"
   },
   {
     "lervag/vimtex",
