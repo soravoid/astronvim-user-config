@@ -84,7 +84,7 @@ return {
 
     vim.wo.relativenumber = false
     vim.api.nvim_set_option("clipboard", "unnamed")
-    vim.opt.colorcolumn = "79"
+    vim.opt.colorcolumn = "88"
 
     if vim.g.neovide then
         -- Copy-Paste Keymaps
