@@ -82,7 +82,6 @@ return {
     --   },
     -- }
 
-    vim.wo.relativenumber = false
     vim.api.nvim_set_option("clipboard", "unnamed")
     vim.opt.colorcolumn = "88"
 
